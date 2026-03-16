@@ -1,0 +1,136 @@
+/* 모달 오버레이 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* 모달 활성 상태 */
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 모달 컨테이너 */
+.modal-container {
+  background: var(--neutral-white-base);
+  border-radius: 10px;
+  padding: 24px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: var(--shadow-wide-blur-lg);
+  position: relative;
+  transform: scale(0.9);
+}
+
+/* 모달 활성 시 컨테이너 */
+.modal-overlay.active .modal-container {
+  transform: scale(1);
+}
+
+/* 모달 헤더 */
+/* .modal-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+} */
+
+.modal-title {
+  color: var(--neutral-gray-800);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  line-height: 140%;
+  text-align: center;
+  margin: 24px;
+}
+
+.modal-close {
+  border: none;
+  width: 24px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+/* 모달 바디 */
+.modal-body {
+  color: var(--neutral-gray-700);
+  font-size: var(--text-sm);
+  line-height: 140%;
+  margin-bottom: 24px;
+}
+
+.modal-message {
+  color: var(--neutral-gray-900);
+  font-size: var(--text-md);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; 
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* 모달 푸터 */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.modal-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid;
+  margin-top: 16px;
+}
+
+.modal-btn-cancel {
+  background: var(--neutral-gray-600);
+  border: 1px solid var(--neutral-gray-600);
+  color: #fff;
+  font-weight: 500;
+}
+
+.modal-btn-confirm {
+  background: var(--primary-700);
+  border-color: var(--primary-700);
+  color: white;
+}
+
+.modal-btn-confirm:hover {
+  background: var(--primary-800);
+  border-color: var(--primary-800);
+}
+
+/* 모달 애니메이션 */
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-overlay.active .modal-container {
+  animation: modalSlideIn 0.3s ease;
+}

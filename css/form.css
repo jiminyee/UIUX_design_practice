@@ -1,0 +1,50 @@
+.form-title {
+  height: 35px;
+  color: var(--neutral-gray-800);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: 140%;
+  border-bottom: 1px solid var(--neutral-gray-400);
+  margin-bottom: 10px;
+}
+
+.form-input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-cards-grid {
+  display: grid;
+  grid-template-columns: 616px 1fr;
+  grid-template-rows: repeat(2, auto);
+  gap: 24px;
+  align-items: start;
+}
+
+/* 왼쪽 카드 (결재 신청서) */
+.form-cards-grid > .input-card:first-child {
+  /* 2개의 행을 모두 차지하여 높이를 Full로 만듦 */
+  grid-row: span 2;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-button-section {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 44px;
+  gap: 8px;
+  margin-top: 36px;
+}
+
+.form-button-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

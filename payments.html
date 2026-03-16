@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX Practice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/topbar.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/input.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/badge.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+<body>
+  <!-- 사이드바 -->
+<aside class="sidebar">
+  <div class="logo">
+  <a href="index.html">
+    <img src="./assets/images/logo.svg" alt="ecoletree">
+  </a>
+</div>
+  <nav class="menu-container">
+    <div class="menu-group">
+      <div class="group-title">
+        <span>AdminPortal </span>
+        <i class="fa-solid fa-angle-up" style="color: var(--neutral-gray-500);"></i>
+      </div>
+      <ul>
+        <li class="menu-item">
+          <a href="index.html">
+            <i class="fa-solid fa-house fa-sm" style="color: var(--neutral-white-base);"></i>Dashboard
+          </a>
+        </li>
+        <li class="menu-item active">
+          <a href="payments.html">
+            <i class="fa-solid fa-wallet fa-sm" style="color: var(--primary-900);"></i> 결재 관리
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="users.html">
+            <i class="fa-solid fa-users fa-sm" style="color: var(--neutral-white-base);"></i> 사용자 관리
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#">
+            <i class="fa-solid fa-briefcase fa-sm" style="color: var(--neutral-white-base);"></i> 연차 관리
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="menu-group">
+      <div class="group-title">
+        <span>Boxwood</span>
+        <i class="fa-solid fa-angle-up" style="color: var(--neutral-gray-500);"></i>
+      </div>
+      <ul>
+        <li class="menu-item"><a href="#"><i class="fa-solid fa-file fa-sm" style="color: var(--neutral-white-base);"></i> menu 01</a></li>
+        <li class="menu-item"><a href="#"><i class="fa-solid fa-file fa-sm" style="color: var(--neutral-white-base);"></i> menu 02</a></li>
+      </ul>
+    </div>
+    <div class="menu-group">
+      <div class="group-title">
+        <span>Olive Connect</span>
+        <i class="fa-solid fa-angle-up" style="color: var(--neutral-gray-500);"></i>
+      </div>
+      <ul>
+        <li class="menu-item"><a href="#"><i class="fa-solid fa-file fa-sm" style="color: var(--neutral-white-base);"></i> menu 01</a></li>
+        <li class="menu-item"><a href="#"><i class="fa-solid fa-file fa-sm" style="color: var(--neutral-white-base);"></i> menu 02</a></li>
+      </ul>
+    </div>
+    <div class="menu-group">
+      <div class="group-title">
+        <span>Forest Guard</span>
+        <i class="fa-solid fa-angle-up" style="color: var(--neutral-gray-500);"></i>
+      </div>
+      <ul>
+        <li class="menu-item"><a href="#"><i class="fa-solid fa-file fa-sm" style="color: var(--neutral-white-base);"></i> menu 01</a></li>
+        <li class="menu-item"><a href="#"><i class="fa-solid fa-file fa-sm" style="color: var(--neutral-white-base);"></i> menu 02</a></li>
+      </ul>
+    </div>
+  </nav>
+</aside>
+<!-- 탑바 -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <div class="notification">
+      <i class="fa-regular fa-bell"></i>
+      <span class="notification-badge"></span>
+    </div>
+    <div class="user-profile">
+      <span class="user-id">Jay Min</span>
+      <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+    </div>
+  </div>
+</header>
+<!-- 컨텐츠 타이틀 -->
+<div class="main-content">
+  <div class="main-content-title">
+    <h5 >결재 관리</h5>
+  </div>
+  <!-- 카드 컴포넌트 -->
+  <div class="cards-container">
+    <div class="input-card">
+      <div class="input-section-wrapper">
+      <div class="input-section">
+      <div class="input-group">
+        <label for="payment-type">구분
+        </label>
+        <select id="payment-type">
+            <option value="all">전체</option>
+            <option value="payment">지급</option>
+            <option value="request">품의</option>
+            <option value="card-approval">팀 카드 결재</option>
+            <option value="delivery-cost">소송 비용</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="category">카테고리
+        </label>
+        <select id="category">
+            <option value="all">전체</option>
+            <option value="it-equipment">IT 전자기기</option>
+            <option value="etc">기타</option>
+            <option value="education">교육비</option>
+            <option value="monthly-cost">월고정 비용</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="start-date">입금 기한
+        </label>
+        <div class="date-inputs">
+          <input type="date" id="start-date" placeholder="YYYY-MM-DD">
+          <span>~</span>
+          <input type="date" id="end-date" placeholder="YYYY-MM-DD">
+        </div>
+      </div>
+      </div>
+      <button class="btn btn-fixed btn-primary">검색</button>
+    </div>
+    </div>
+  </div>
+  <div class="cards-container">
+    <div class="table-card">
+    <div class="table-header">
+          <select class="select-white" id="category">
+            <option value="all">전체</option>
+            <option value="payment">지급</option>
+            <option value="request">품의</option>
+            <option value="card-approval">팀 카드 결재</option>
+            <option value="delivery-cost">소송 비용</option>
+            </select>
+    </div>
+      <div class="table-wrapper">
+        <table class="chart-table">
+          <thead>
+            <tr> 
+              <th checkbox data-align="left"><input type="checkbox" id="select-all"></th>
+              <th data-align="left">구분</th>
+              <th data-align="left">카테고리</th>
+              <th data-align="left">제목</th>
+              <th data-align="center">신청일</th>
+              <th data-align="center">입금 기한</th>
+              <th data-align="center">상태</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td checkbox data-align="left"><input type="checkbox" id="select-1"></td>
+              <td data-align="left">지급</td>
+              <td data-align="left">IT 전자기기</td>
+              <td data-align="left">공유 드라이드 결재 신청</td>
+              <td data-align="center">2023.10.01</td>
+              <td data-align="center">2023.10.15</td>
+              <td ><span class="badge badge-approval">승인</span></td>
+            </tr>
+            <tr>
+              <td checkbox data-align="left"><input type="checkbox" id="select-2"></td>
+              <td data-align="left">품의</td>
+              <td data-align="left">계약</td>
+              <td data-align="left">25년 5월 품의 결재 신청</td>
+              <td data-align="center">2023.10.01</td>
+              <td data-align="center">2023.10.15</td>
+              <td><span class="badge badge-applying">신청</span></td>
+            </tr>
+            <tr>
+              <td checkbox data-align="left"><input type="checkbox" id="select-3"></td>
+              <td data-align="left">팀 카드 결재</td>
+              <td data-align="left">기타</td>
+              <td data-align="left">공유 드라이드 결재 신청</td>
+              <td data-align="center">2023.10.01</td>
+              <td data-align="center">2023.10.15</td>
+              <td><span class="badge badge-rejected">반려</span></td>
+            </tr>
+            <tr>
+              <td checkbox data-align="left"><input type="checkbox" id="select-4"></td>
+              <td data-align="left">소송비용</td>
+              <td data-align="left">계약</td>
+              <td data-align="left">소송비용 결재</td>
+              <td data-align="center">2023.10.01</td>
+              <td data-align="center">2023.10.15</td>
+              <td ><span class="badge badge-approval">승인</span></td>
+            </tr>
+            <tr>
+              <td checkbox data-align="left"><input type="checkbox" id="select-5"></td>
+              <td data-align="left">지급</td>
+              <td data-align="left">IT 전자기기</td>
+              <td data-align="left">공유 드라이드 결재 신청</td>
+              <td data-align="center">2023.10.01</td>
+              <td data-align="center">2023.10.15</td>
+              <td><span class="badge badge-applying">신청</span></td>
+            </tr>
+            <tr>
+              <td checkbox data-align="left"><input type="checkbox" id="select-6"></td>
+              <td data-align="left">품의</td>
+              <td data-align="left">계약</td>
+              <td data-align="left">25년 5월 품의 결재 신청</td>
+              <td data-align="center">2023.10.01</td>
+              <td data-align="center">2023.10.15</td>
+              <td><span class="badge badge-rejected">반려</span></td>
+            </tr>
+            <tr>
+              <td checkbox data-align="left"><input type="checkbox" id="select-7"></td>
+              <td data-align="left">팀 카드 결재</td>
+              <td data-align="left">기타</td>
+              <td data-align="left">공유 드라이드 결재 신청</td>
+              <td data-align="center">2023.10.01</td>
+              <td data-align="center">2023.10.15</td>
+              <td><span class="badge badge-applying">신청</span></td>
+            </tr>
+            <tr>
+              <td checkbox data-align="left"><input type="checkbox" id="select-8"></td>
+              <td data-align="left">소송비용</td>
+              <td data-align="left">계약</td>
+              <td data-align="left">소송비용 결재</td>
+              <td data-align="center">2023.10.01</td>
+              <td data-align="center">2023.10.15</td>
+              <td><span class="badge badge-applying">신청</span></td>
+            </tr>
+            <tr>
+              <td checkbox data-align="left"><input type="checkbox" id="select-9"></td>
+              <td data-align="left">팀 카드 결재</td>
+              <td data-align="left">기타</td>
+              <td data-align="left">공유 드라이드 결재 신청</td>
+              <td data-align="center">2023.10.01</td>
+              <td data-align="center">2023.10.15</td>
+              <td><span class="badge badge-applying">신청</span></td>
+            </tr>
+            <tr>
+              <td checkbox data-align="left"><input type="checkbox" id="select-10"></td>
+              <td data-align="left">소송비용</td>
+              <td data-align="left">계약</td>
+              <td data-align="left">소송비용 결재</td>
+              <td data-align="center">2023.10.01</td>
+              <td data-align="center">2023.10.15</td>
+              <td><span class="badge badge-applying">신청</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>    
+      <div class="button-section">
+        <button class="btn btn-secondary">선택 복사</button>
+      <button class="btn btn-primary btn-md"><a href="payments-application.html">결제 신청</a></button>
+        </div>
+        
+        <div class="pagination-section-with-info">
+          <div class="pagination-info">
+            <select class="select-white" id="category">
+                <option value="all">1</option>
+                <option value="payment">2</option>
+                <option value="request">3</option>
+                <option value="card-approval">4</option>
+                <option value="delivery-cost">5</option>
+                </select>
+                <span class="info">1 to 10 of 50 items</span>
+          </div>
+          <div class="pagination">
+            <button class="pagination-btn" disabled>
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn">2</button>
+            <button class="pagination-btn">3</button>
+            <button class="pagination-btn">4</button>
+            <button class="pagination-btn">5</button>
+            <!-- <span class="pagination-info">...</span>
+            <button class="pagination-btn">10</button> -->
+            <button class="pagination-btn">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/sidebar.js"></script>
+<script src="js/table-checkbox.js"></script>
+</body>
+</html>

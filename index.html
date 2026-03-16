@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX Practice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/topbar.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/badge.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+<body>
+  <!-- 사이드바 -->
+<aside class="sidebar">
+  <div class="logo">
+  <a href="index.html">
+    <img src="./assets/images/logo.svg" alt="ecoletree">
+  </a>
+</div>
+  <nav class="menu-container">
+    <div class="menu-group">
+      <div class="group-title">
+        <span>AdminPortal </span>
+        <i class="fa-solid fa-angle-up" style="color: var(--neutral-gray-500);"></i>
+      </div>
+      <ul>
+        <li class="menu-item active">
+          <a href="index.html">
+            <i class="fa-solid fa-house fa-sm" style="color: var(--primary-900);"></i>Dashboard
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="payments.html">
+            <i class="fa-solid fa-wallet fa-sm" style="color: var(--neutral-white-base);"></i> 결재 관리
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="users.html">
+            <i class="fa-solid fa-users fa-sm" style="color: var(--neutral-white-base);"></i> 사용자 관리
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#">
+            <i class="fa-solid fa-briefcase fa-sm" style="color: var(--neutral-white-base);"></i> 연차 관리
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="menu-group">
+      <div class="group-title">
+        <span>Boxwood</span>
+        <i class="fa-solid fa-angle-up" style="color: var(--neutral-gray-500);"></i>
+      </div>
+      <ul>
+        <li class="menu-item"><a href="#"><i class="fa-solid fa-file fa-sm" style="color: var(--neutral-white-base);"></i> menu 01</a></li>
+        <li class="menu-item"><a href="#"><i class="fa-solid fa-file fa-sm" style="color: var(--neutral-white-base);"></i> menu 02</a></li>
+      </ul>
+    </div>
+    <div class="menu-group">
+      <div class="group-title">
+        <span>Olive Connect</span>
+        <i class="fa-solid fa-angle-up" style="color: var(--neutral-gray-500);"></i>
+      </div>
+      <ul>
+        <li class="menu-item"><a href="#"><i class="fa-solid fa-file fa-sm" style="color: var(--neutral-white-base);"></i> menu 01</a></li>
+        <li class="menu-item"><a href="#"><i class="fa-solid fa-file fa-sm" style="color: var(--neutral-white-base);"></i> menu 02</a></li>
+      </ul>
+    </div>
+    <div class="menu-group">
+      <div class="group-title">
+        <span>Forest Guard</span>
+        <i class="fa-solid fa-angle-up" style="color: var(--neutral-gray-500);"></i>
+      </div>
+      <ul>
+        <li class="menu-item"><a href="#"><i class="fa-solid fa-file fa-sm" style="color: var(--neutral-white-base);"></i> menu 01</a></li>
+        <li class="menu-item"><a href="#"><i class="fa-solid fa-file fa-sm" style="color: var(--neutral-white-base);"></i> menu 02</a></li>
+      </ul>
+    </div>
+  </nav>
+</aside>
+<!-- 탑바 -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <div class="notification">
+      <i class="fa-regular fa-bell"></i>
+      <span class="notification-badge"></span>
+    </div>
+    <div class="user-profile">
+      <span class="user-id">Jay Min</span>
+      <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+    </div>
+  </div>
+</header>
+<!-- 컨텐츠 타이틀 -->
+<div class="main-content">
+  <div class="main-content-title">
+    <h5 >Dashboard</h5>
+  </div>
+  <!-- KPI 타이틀  -->
+  <div class="main-content-subtitle">
+    <span >My KPI</span>
+    <div class="chart-tabs">
+            <button class="tab active">주간</button>
+            <button class="tab">월간</button>
+          </div>
+  </div>
+  <!-- KPI 카드 그리드 (4열) -->
+  <div class="kpi-grid">
+    <div class="card">
+      <div class="card-wrapper">
+        <h3 class="card-title">Service Order</h3>
+        <div class="card-data up"> 463 </div>
+        <div class="card-badge-section">
+          <div class="card-badge up"> <i class="fa-solid fa-chevron-up"></i> 4% </div>
+          <div class="card-comparison"> vs Last Month </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="chart-container">
+          <svg class="chart-line up" viewBox="0 0 329 56" preserveAspectRatio="none">
+            <path opacity="0.2" fill-rule="evenodd" clip-rule="evenodd" d="M0 31.5366C0 31.5366 35.2615 19.3053 57.1791 19.3053C88.6229 19.3053 92.4312 28.1837 131.506 28.1837C170.58 28.1837 178.541 19.0385 228.116 8.22859C277.69 -2.58136 329 0.367422 329 0.367422V48C329 52.4183 325.418 56 321 56H8.00001C3.58173 56 0 52.4183 0 48V31.5366Z" fill="url(#paint0_linear_133_1414)"/>
+            <defs>
+              <linearGradient id="paint0_linear_133_1414" x1="0" y1="-0.264579" x2="0" y2="56" gradientUnits="userSpaceOnUse">
+                <stop offset="0.524038" stop-color="#32A06E"/>
+                <stop offset="1" stop-color="#2ED389" stop-opacity="0.01"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-wrapper">
+        <h3 class="card-title">R-NPS</h3>
+        <div class="card-data-section">
+          <div class="card-data"> 84 </div>
+          <div class="card-data-unit"> /100 </div>
+        </div>
+        <div class="card-badge-section">
+          <div class="card-badge"> <i class="fa-solid fa-minus"></i> 0% </div>
+          <div class="card-comparison"> vs Last Month </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="chart-container">
+          <svg class="chart-line same" viewBox="0 0 329 56" preserveAspectRatio="none">
+            <path opacity="0.2" fill-rule="evenodd" clip-rule="evenodd" d="M0 31.5366C0 31.5366 35.2615 19.3053 57.1791 19.3053C88.6229 19.3053 92.4312 28.1837 131.506 28.1837C170.58 28.1837 178.541 19.0385 228.116 8.22859C277.69 -2.58136 329 0.367422 329 0.367422V48C329 52.4183 325.418 56 321 56H8.00001C3.58173 56 0 52.4183 0 48V31.5366Z" fill="url(#paint0_linear_133_1414_2)"/>
+            <defs>
+              <linearGradient id="paint0_linear_133_1414_2" x1="0" y1="-0.264579" x2="0" y2="56" gradientUnits="userSpaceOnUse">
+                <stop offset="0.524038" stop-color="#008CAE"/>
+                <stop offset="1" stop-color="#008CAE" stop-opacity="0.01"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-wrapper">
+        <h3 class="card-title">Re-Do Rate</h3>
+        <div class="card-data-section">
+          <div class="card-data up"> 7 </div>
+          <div class="card-data-unit"> % </div>
+        </div>
+        <div class="card-badge-section">
+          <div class="card-badge up"> <i class="fa-solid fa-chevron-up"></i> 4% </div>
+          <div class="card-comparison"> vs Last Month </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="chart-container">
+          <svg class="chart-line up" viewBox="0 0 329 56" preserveAspectRatio="none">
+            <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M0 31.5366C0 31.5366 35.2615 19.3053 57.1791 19.3053C88.6229 19.3053 92.4312 28.1837 131.506 28.1837C170.58 28.1837 178.541 19.0385 228.116 8.22859C277.69 -2.58136 329 0.367422 329 0.367422V48C329 52.4183 325.418 56 321 56H8.00001C3.58173 56 0 52.4183 0 48V31.5366Z" fill="url(#paint0_linear_133_1414_3)"/>
+            <defs>
+              <linearGradient id="paint0_linear_133_1414_3" x1="0" y1="-0.264579" x2="0" y2="56" gradientUnits="userSpaceOnUse">
+                <stop offset="0.524038" stop-color="#32A06E"/>
+                <stop offset="1" stop-color="#2ED389" stop-opacity="0.01"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-wrapper">
+        <h3 class="card-title">Long Pending Rate</h3>
+        <div class="card-data-section">
+          <div class="card-data down"> 10 </div>
+          <div class="card-data-unit"> % </div>
+        </div>
+        <div class="card-badge-section">
+          <div class="card-badge down"> <i class="fa-solid fa-chevron-down"></i> 4% </div>
+          <div class="card-comparison"> vs Last Month </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="chart-container">
+          <svg class="chart-line down" viewBox="0 0 329 56" preserveAspectRatio="none">
+            <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M0 31.5366C0 31.5366 35.2615 19.3053 57.1791 19.3053C88.6229 19.3053 92.4312 28.1837 131.506 28.1837C170.58 28.1837 178.541 19.0385 228.116 8.22859C277.69 -2.58136 329 0.367422 329 0.367422V48C329 52.4183 325.418 56 321 56H8.00001C3.58173 56 0 52.4183 0 48V31.5366Z" fill="url(#paint0_linear_133_1414_4)"/>
+            <defs>
+              <linearGradient id="paint0_linear_133_1414_4" x1="0" y1="-0.264579" x2="0" y2="56" gradientUnits="userSpaceOnUse">
+                <stop offset="0.524038" stop-color="#EF4444"/>
+                <stop offset="1" stop-color="#EF4444" stop-opacity="0.01"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 대시보드 레이아웃 (메인 콘텐츠 + 우측 사이드바) -->
+  <div class="dashboard-layout">
+
+    <!-- 메인 콘텐츠 영역 -->
+    <div class="content-area">
+
+      <!-- Process + Task 요약 카드 (2열) -->
+      <div class="summary-row">
+        <div class="summary-card">
+          <div class="card-wrapper">
+            <div class="card-title-wrapper">
+              <img src="assets/icons/Icon-process.svg" alt="Process" class="card-title-icon">
+              <h3 class="card-title">Process</h3>
+            </div>
+            <div class="summary-data-wrapper">
+              <div class="summary-data-section">
+                <div class="summary-data"> 3,000 </div>
+                <div class="summary-data-item"> 관리항목 </div>
+              </div>
+              <div class="summary-data-section">
+                <div class="summary-data"> 50 </div>
+                <div class="summary-data-item"> 작업중 </div>
+              </div>
+              <div class="summary-data-section">
+                <div class="summary-data"> 0 </div>
+                <div class="summary-data-item"> 신규 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="summary-card">
+          <div class="card-wrapper">
+            <div class="card-title-wrapper">
+              <img src="assets/icons/icon-task.svg" alt="Task" class="card-title-icon">
+              <h3 class="card-title">Task</h3>
+            </div>
+            <div class="summary-data-wrapper">
+              <div class="summary-data-section">
+                <div class="summary-data"> 3,000 </div>
+                <div class="summary-data-item"> 관리항목 </div>
+              </div>
+              <div class="summary-data-section">
+                <div class="summary-data"> 50 </div>
+                <div class="summary-data-item"> 작업중 </div>
+              </div>
+              <div class="summary-data-section">
+                <div class="summary-data"> 0 </div>
+                <div class="summary-data-item"> 신규 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 파이 차트 카드 (2열) -->
+      <div class="charts-row">
+        <div class="chart-card">
+          <h3 class="card-title">프로세스 상태 별 실행 건수</h3>
+          <div class="chart-content-row">
+            <table class="chart-table">
+              <thead>
+                <tr><th data-align="left">프로세스 상태</th><th data-align="right">실행 건수</th></tr>
+              </thead>
+              <tbody>
+                <tr><td data-align="left">Completed</td><td data-align="right">150</td></tr>
+                <tr><td data-align="left">Processing</td><td data-align="right">10</td></tr>
+                <tr><td data-align="left">Error</td><td data-align="right">10</td></tr>
+                <tr><td data-align="left">Terminated</td><td data-align="right">20</td></tr>
+                <tr><td data-align="left">Paused</td><td data-align="right">10</td></tr>
+              </tbody>
+            </table>
+            <div class="pie-chart-container">
+              <div class="pie-chart status-pie"></div>
+              <div class="pie-labels">
+                <span class="badge-completed">Completed</span>
+                <span class="badge-processing">Processing</span>
+                <span class="badge-terminated">Terminated</span>
+                <span class="badge-error">Error</span>
+                <span class="badge-paused">Paused</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-card">
+          <h3 class="card-title">프로세스 실행 건수 Top5</h3>
+          <div class="chart-content-row">
+            <table class="chart-table">
+              <thead>
+                <tr><th data-align="left">프로세스 명</th><th data-align="right">실행 건수</th></tr>
+              </thead>
+              <tbody>
+                <tr><td data-align="left">프로세스 A</td><td data-align="right">150</td></tr>
+                <tr><td data-align="left">프로세스 B</td><td data-align="right">10</td></tr>
+                <tr><td data-align="left">프로세스 C</td><td data-align="right">10</td></tr>
+                <tr><td data-align="left">프로세스 D</td><td data-align="right">20</td></tr>
+                <tr><td data-align="left">프로세스 E</td><td data-align="right">10</td></tr>
+              </tbody>
+            </table>
+            <div class="pie-chart-container">
+              <div class="pie-chart task-pie"></div>
+              <div class="pie-labels">
+                <span class="badge-process-A">프로세스 A</span>
+                <span class="badge-process-B">프로세스 B</span>
+                <span class="badge-process-C">프로세스 C</span>
+                <span class="badge-process-D">프로세스 D</span>
+                <span class="badge-process-E">프로세스 E</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 처리현황 바 차트 (전체 폭) -->
+      <div class="task-chart-card">
+        <div class="task-chart-header">
+          <h3 class="card-title">Task 처리현황</h3>
+          <div class="chart-tabs">
+            <button class="tab active">주간</button>
+            <button class="tab">월간</button>
+          </div>
+        </div>
+        <div class="task-chart-body">
+          <div class="y-axis">
+            <span>100k</span>
+            <span>50k</span>
+            <span>20k</span>
+            <span>10k</span>
+            <span>0</span>
+          </div>
+          <div class="bar-chart">
+            <div class="bar-group">
+              <div class="bar-graph-group">
+              <div class="bar dark" style="height:20%"></div>
+              <div class="bar light" style="height:70%"></div>
+            </div>
+              <span>월</span>
+            </div>
+            <div class="bar-group">
+              <div class="bar-graph-group">
+              <div class="bar dark" style="height:18%"></div>
+              <div class="bar light" style="height:55%"></div>
+            </div>
+              <span>화</span>
+            </div>
+            <div class="bar-group">
+              <div class="bar-graph-group">
+              <div class="bar dark" style="height:45%"></div>
+              <div class="bar light" style="height:20%"></div>
+              </div>
+              <span>수</span>
+            </div>
+            <div class="bar-group">
+              <div class="bar-graph-group">
+              <div class="bar dark" style="height:40%"></div>
+              <div class="bar light" style="height:18%"></div>
+            </div>
+              <span>목</span>
+            </div>
+            <div class="bar-group">
+              <div class="bar-graph-group">
+              <div class="bar dark" style="height:60%"></div>
+              <div class="bar light" style="height:20%"></div>
+              </div>
+              <span>금</span>
+            </div>
+            <div class="bar-group">
+              <div class="bar-graph-group">
+              <div class="bar dark" style="height:35%"></div>
+              <div class="bar light" style="height:20%"></div>
+            </div>
+              <span>토</span>
+            </div>
+            <div class="bar-group">
+              <div class="bar-graph-group">
+              <div class="bar dark" style="height:70%"></div>
+              <div class="bar light" style="height:40%"></div>
+            </div>
+              <span>일</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 우측 통계 사이드바 -->
+    <div class="stats-sidebar">
+      <div class="stat-card main-stat">
+        <span class="stat-label">Inbound 총 매출</span>
+        <div class="value-section">
+        <h2 class="stat-value">$964,679</h2>
+        <div class="card-badge-section">
+          <div class="card-badge up"> <i class="fa-solid fa-chevron-up"></i> 4% </div>
+          <div class="card-comparison"> vs Last Month </div>  </div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">B2B 총 매출</span>
+        <div class="value-section">
+        <h2 class="stat-value">$964,679</h2>
+        <div class="card-badge-section">
+          <div class="card-badge up"> <i class="fa-solid fa-chevron-up"></i> 4% </div>
+          <div class="card-comparison"> vs Last Month </div>  </div>
+        </div>
+      </div>
+      <div class="stat-card-group">
+        <div class="sub-stat">
+          <span class="stat-label">총 처리 주문 건수</span>
+          <div class="sub-stat-row">
+            <span class="value">64,679</span>
+          <div class="card-badge-section">
+          <div class="card-badge up"> <i class="fa-solid fa-chevron-up"></i> 4% </div>
+          <div class="card-comparison"> vs Last Month </div>  
+        </div>          
+      </div>
+        </div>
+        <div class="sub-stat">
+          <span class="stat-label">B2B 처리 주문 건수</span>
+          <div class="sub-stat-row">
+            <span class="value">764,679</span>
+            <div class="card-badge-section">
+          <div class="card-badge down"> <i class="fa-solid fa-chevron-down"></i> 45% </div>
+          <div class="card-comparison"> vs Last Month </div>  
+        </div>
+        </div>
+        </div>
+        <div class="sub-stat">
+          <span class="stat-label">B2C 처리 주문 건수</span>
+          <div class="sub-stat-row">
+            <span class="value">2,964,679</span>
+            <div class="card-badge-section">
+          <div class="card-badge up"> <i class="fa-solid fa-chevron-up"></i> 4% </div>
+          <div class="card-comparison"> vs Last Month </div>  
+        </div>
+          </div>
+        </div>
+        <div class="sub-stat">
+          <span class="stat-label">FBA 처리 주문 건수</span>
+          <div class="sub-stat-row">
+            <span class="value">34,679</span>
+            <div class="card-badge-section">
+          <div class="card-badge down"> <i class="fa-solid fa-chevron-down"></i> 4.05% </div>
+          <div class="card-comparison"> vs Last Month </div>  
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/sidebar.js"></script>
+</body>
+</html>

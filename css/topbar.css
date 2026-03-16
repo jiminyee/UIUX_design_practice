@@ -1,0 +1,109 @@
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 276px;
+  right: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 100;
+  background-color: var(--primary-50);
+}
+
+.topbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0px; /* 사이드바 쪽으로 밀기 */
+  width: 30px;
+  height: 30px;
+  background-color: var(--primary-900); /* 사이드바 색상 */
+  border-bottom-right-radius: 40px;
+}
+
+/* 2. 아래쪽 "안쪽 커브" 모양 (탑바 색상으로 채우기) */
+.topbar::after {
+  content: "";
+  position: absolute;
+  top: 18px; /* 뿔 바로 아래 */
+  left: 20px;
+  width: 30px;
+  height: 35px;
+  background-color: transparent;
+
+  /* 왼쪽 상단을 둥글게 깎고 */
+  border-top-left-radius: 40px;
+  /* 깎인 나머지 부분을 탑바 색상으로 채워 연결부 완성 */
+  box-shadow: -20px -20px 0 0 var(--primary-50);
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hamburger {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-900);
+  font-size: var(--icon-size);
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.notification {
+  position: relative;
+  cursor: pointer;
+  color: var(--primary-900);
+  font-size: var(--icon-size);
+}
+
+.notification-badge {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-600);
+  border-radius: 50%;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.user-profile:hover {
+  color: var(--neutral-gray-800);
+}
+
+.user-id {
+  font-size: var(--text-sm);
+  color: var(--primary-900);
+  font-weight: 500;
+}
+
+.dropdown-icon {
+  color: var(--neutral-gray-600);
+  font-size: var(--text-xs);
+}
+
+.sidebar-collapsed .topbar {
+  left: 60px;
+}

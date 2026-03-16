@@ -1,0 +1,168 @@
+.badge-completed {
+  color: var(--neutral-white-base);
+  padding: 2px 3px;
+  border-radius: 4px;
+  background: var(--success-400);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.badge-processing {
+  color: var(--neutral-white-base);
+  padding: 2px 3px;
+  border-radius: 4px;
+  background: var(--warning-400);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.badge-error {
+  color: var(--neutral-white-base);
+  padding: 2px 3px;
+  border-radius: 4px;
+  background: var(--danger-400);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.badge-terminated {
+  color: var(--neutral-white-base);
+  padding: 2px 3px;
+  border-radius: 4px;
+  background: var(--primary-500);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.badge-paused {
+  color: var(--neutral-white-base);
+  padding: 2px 3px;
+  border-radius: 4px;
+  background: var(--neutral-gray-600);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.badge-process-A {
+  color: var(--neutral-white-base);
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: var(--info-400);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.badge-process-B {
+  color: var(--neutral-white-base);
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: var(--warning-400);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.badge-process-C {
+  color: var(--neutral-white-base);
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: var(--primary-500);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 140%;
+}
+.badge-process-D {
+  color: var(--neutral-white-base);
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: var(--danger-400);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 140%;
+}
+.badge-process-E {
+  color: var(--neutral-white-base);
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: var(--primary-500);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 140%;
+}
+.badge-process-D {
+  color: var(--neutral-white-base);
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: var(--danger-400);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 140%;
+}
+.badge-process-E {
+  color: var(--neutral-white-base);
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: var(--success-500);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 140%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 승인 신청 반려 배지 */
+.badge-rejected {
+  display: flex;
+  width: 43px;
+  height: 17px;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  border-radius: 8px;
+  background: var(--danger-100);
+  color: var(--danger-500);
+  font-size: var(--text-xs);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.badge-approval {
+  display: flex;
+  width: 43px;
+  height: 17px;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  border-radius: 8px;
+  background: var(--success-50);
+  color: var(--success-500);
+  font-size: var(--text-xs);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.badge-applying {
+    display: flex;
+    width: 43px;
+    height: 17px;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    border-radius: 8px;
+    background: var(--info-100);
+    color: var(--info-500);
+    font-size: var(--text-xs);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

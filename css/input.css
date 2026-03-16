@@ -1,0 +1,269 @@
+label {
+  color: var(--neutral-gray-800);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  line-height: 140%;
+}
+
+/* 필수 필드 라벨 스타일 */
+.required-label::after {
+  content: " *";
+  color: var(--danger-500);
+  font-weight: 600;
+}
+
+/* 선택 필드 라벨 스타일 */
+.optional-label::after {
+  content: " (선택)";
+  color: var(--neutral-gray-500);
+  font-size: var(--text-xs);
+  font-weight: 400;
+}
+
+input[type="text"] {
+  height: 32px;
+  border-radius: 10px;
+  border: 1px solid var(--neutral-gray-400);
+  background: var(--neutral-gray-200);
+  padding: 7px 10px;
+  color: var(--neutral-gray-700);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  line-height: 140%;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-700);
+  /* box-shadow: 0 0 0 2px rgba(0, 70, 87, 0.1); */
+}
+
+input[type="text"].disabled {
+  background: var(--neutral-gray-200);
+  border: 1px solid var(--neutral-gray-400);
+  color: var(--neutral-gray-600) !important;
+  cursor: not-allowed;
+  -webkit-text-fill-color: var(--neutral-gray-600) !important;
+  opacity: 1;
+}
+
+select {
+  height: 32px;
+  border-radius: 10px;
+  border: 1px solid var(--neutral-gray-400);
+  background: var(--neutral-gray-200);
+  padding: 7px 10px;
+  color: var(--neutral-gray-700);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  line-height: 140%;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M2 4l4 4 4-4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-left: 12px;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--primary-700);
+  /* box-shadow: 0 0 0 2px rgba(0, 70, 87, 0.1); */
+}
+
+/* 화이트 배경 셀렉트 박스 */
+select.select-white {
+  background: var(--neutral-white-base);
+  border: 1px solid var(--neutral-gray-600);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M2 4l4 4 4-4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+/* 드롭다운 옵션 스타일 */
+select option {
+  background: var(--neutral-white-base);
+  color: var(--neutral-gray-700);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  line-height: 140%;
+  padding: 8px 10px;
+}
+
+/* select option:hover {
+background: var(--primary-50);
+color: var(--primary-900);
+} */
+
+/* select option:checked {
+background: var(--primary-100);
+color: var(--primary-900);
+font-weight: 600;
+} */
+
+input[type="date"] {
+  height: 32px;
+  border-radius: 10px;
+  border: 1px solid var(--neutral-gray-400);
+  background: var(--neutral-gray-200);
+  padding: 7px 10px;
+  color: var(--neutral-gray-700);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  line-height: 140%;
+  box-sizing: border-box;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+input[type="file"] {
+  height: 32px;
+  border-radius: 10px;
+  border: 1px solid var(--neutral-gray-400);
+  background: var(--neutral-gray-200);
+  padding: 7px 10px;
+  color: var(--neutral-gray-700);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  line-height: 140%;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  display: none;
+}
+
+input[type="file"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+/* 파일 첨부 인풋 커스텀 스타일 */
+input[type="file"]::after {
+  content: "파일 선택";
+  display: inline-block;
+  padding: 4px 8px;
+  background: var(--primary-700);
+  color: white;
+  border-radius: 6px;
+  font-size: var(--text-xs);
+  font-weight: 400;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+input[type="file"]:hover::before {
+  background: var(--primary-800);
+}
+
+/* 텍스트 영역 스타일 */
+textarea {
+  height: auto;
+  min-height: 120px;
+  border-radius: 10px;
+  border: 1px solid var(--neutral-gray-400);
+  background: var(--neutral-gray-200);
+  padding: 10px;
+  color: var(--neutral-gray-700);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  line-height: 140%;
+  box-sizing: border-box;
+  resize: vertical;
+  font-family: inherit;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-700);
+}
+
+textarea::placeholder {
+  color: var(--neutral-gray-700);
+}
+
+/* 의견 표시 영역 스타일 */
+.entered-display {
+  /* min-height: 32px; */
+  padding: 10px;
+  border: 1px solid var(--neutral-gray-400);
+  border-radius: 8px;
+  color: var(--neutral-gray-700);
+  font-size: var(--text-xs);
+  line-height: 140%;
+}
+
+.entered-text {
+  color: var(--neutral-gray-900);
+  font-style: italic;
+  font-size: var(--text-xs);
+}
+
+.date-inputs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.date-inputs span {
+  color: var(--neutral-gray-700);
+  font-size: var(--text-sm);
+  font-weight: 400;
+}
+
+.input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.input-section-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+}
+.input-section {
+  width: 700px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.input-info {
+  color: var(--primary-600);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.text-info {
+  width: 100%;
+  color: var(--neutral-gray-600);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  line-height: 140%;
+  text-align: right;
+}

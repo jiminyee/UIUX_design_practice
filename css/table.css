@@ -1,0 +1,103 @@
+.chart-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.chart-table th {
+  text-align: center;
+  border-bottom: 1px solid var(--neutral-gray-400);
+  background: rgba(207, 237, 245, 0.56);
+  color: var(--neutral-gray-800);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 140%;
+  padding: 10px 16px;
+}
+
+.chart-table td {
+  text-align: center;
+  padding: 10px 16px;
+  background: var(--neutral-white-base);
+  color: var(--neutral-gray-800);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  line-height: 140%;
+  cursor: pointer;
+}
+
+/* 체크박스 열 너비 조절 */
+.chart-table th[checkbox],
+.chart-table td[checkbox] {
+  width: 40px;
+  min-width: 50px;
+  max-width: 50px;
+  text-align: center;
+  padding: 10px 8px;
+}
+
+.chart-table th[checkbox] input[type="checkbox"],
+.chart-table td[checkbox] input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border-radius: 4.24px;
+  background: var(--primary-800,);
+  cursor: pointer;
+}
+
+td[data-align="right"] {
+  text-align: right;
+}
+td[data-align="left"] {
+  text-align: left;
+}
+th[data-align="right"] {
+  text-align: right;
+}
+th[data-align="left"] {
+  text-align: left;
+}
+
+.chart-table tbody tr:nth-child(even) td {
+  padding: 10px 16px;
+  background: var(--neutral-gray-200);
+  color: var(--neutral-gray-800);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.chart-table tbody tr:last-child td {
+  border-bottom: 1px solid var(--neutral-gray-400);
+}
+
+/* 체크된 행 스타일 */
+.chart-table tbody tr.checked td {
+  background: var(--primary-200) !important;
+}
+
+.chart-table tbody tr.checked td:not([checkbox]) {
+  background: var(--primary-200) !important;
+}
+
+.table-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+}
+
+.table-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+td:has(.badge) {
+  text-align: center;
+  vertical-align: middle;
+}
+
+td .badge {
+  margin: 0 auto;
+}
