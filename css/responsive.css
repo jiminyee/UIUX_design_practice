@@ -1,0 +1,148 @@
+/* =========================================================
+   responsive.css — 모바일 / 태블릿 대응
+   - 모든 규칙이 미디어쿼리 안에만 있어 데스크톱 화면은 변하지 않습니다.
+   - 반드시 다른 css 파일들보다 "뒤에" 로드해야 합니다.
+   ========================================================= */
+
+/* ===== 태블릿 이하 (1024px) ===== */
+@media (max-width: 1024px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  img,
+  svg {
+    max-width: 100%;
+  }
+
+  /* KPI 4열 → 2열 */
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 본문 + 우측 패널 2열 → 1열 */
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .main-content {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /* 고정 700px 해제 */
+  .input-section {
+    width: 100%;
+  }
+}
+
+/* ===== 모바일 (768px) ===== */
+@media (max-width: 768px) {
+  /* --- 사이드바: 평소엔 화면 밖, 햄버거로 꺼내는 서랍 방식 --- */
+  .sidebar {
+    width: 260px !important;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    z-index: 200;
+  }
+
+  .sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  /* 사이드바가 열렸을 때 뒤를 덮는 반투명 배경 */
+  .sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 150;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+
+  .sidebar-backdrop.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* --- 본문 / 탑바: 사이드바 자리를 비우지 않음 --- */
+  /* !important 는 sidebar.js 가 남긴 인라인 스타일을 덮기 위함 */
+  .main-content {
+    margin-left: 0 !important;
+    padding: 70px 16px 20px 16px;
+  }
+
+  .topbar {
+    left: 0 !important;
+    padding: 0 16px;
+  }
+
+  /* 사이드바와 이어지던 장식 곡선은 서랍 방식에서 어색하므로 숨김 */
+  .topbar::before,
+  .topbar::after {
+    display: none;
+  }
+
+  /* --- 카드: 모두 1열 --- */
+  .kpi-grid,
+  .summary-row,
+  .charts-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- 표: 찌그러뜨리지 말고 가로 스크롤 --- */
+  .table-wrapper,
+  .chart-content-row {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .chart-table {
+    min-width: 560px;
+  }
+
+  /* --- 폼: 세로로 쌓기 --- */
+  .input-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* --- 제목줄: 좁은 화면에서 겹치지 않도록 --- */
+  .main-content-subtitle {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    gap: 8px;
+  }
+
+  /* --- 터치 영역 확보 (손가락으로 누를 수 있게) --- */
+  .hamburger {
+    width: 40px;
+    height: 40px;
+    margin-left: -8px;
+  }
+}
+
+/* ===== 작은 폰 (480px) ===== */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 84vw !important;
+  }
+
+  .main-content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .topbar {
+    padding: 0 12px;
+  }
+
+  /* 좁은 화면에서 아이디 텍스트는 생략하고 아바타만 노출 */
+  .user-id {
+    display: none;
+  }
+}
