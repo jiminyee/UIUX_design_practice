@@ -293,7 +293,102 @@ git reset --soft HEAD~1
 
 ---
 
-## 10. 명령어 요약
+## 10. 안드로이드에서 작업하기
+
+PC 없이 안드로이드 폰/태블릿만으로도 `pjt-resolve` 작업이 가능합니다. 목적에 따라 방법을 고르세요.
+
+| 방법 | 설치 | 할 수 있는 일 | 추천 상황 |
+| --- | --- | --- | --- |
+| **GitHub 웹(Chrome)** | 불필요 | 저장소 생성, 파일 업로드·수정, 커밋, PR, Pages 설정 | **가장 무난함. 대부분 여기서 해결** |
+| **GitHub 모바일 앱** | Play Store | 파일 수정·커밋, 브랜치 선택, PR 생성, 리뷰, CI 재실행 | 이동 중 간단 수정·리뷰 |
+| **Termux** | F-Droid/GitHub | `git` 명령어 전부 (clone/push/pull/branch) | 이 문서의 명령어를 그대로 쓰고 싶을 때 |
+| **Codespaces (브라우저)** | 불필요 | 브라우저 안에서 VS Code 전체 | 본격 개발. 단, 터치 조작 불편 |
+
+> 안드로이드에는 보통 "이미 있는 작업 폴더"가 없습니다.
+> 그래서 2번의 상황 B(기존 폴더 연결)보다는 **상황 A(clone)** 또는 **웹에서 바로 작업**이 현실적입니다.
+
+### 방법 1. GitHub 웹 — 설치 없이 바로 (추천)
+
+1. Chrome에서 https://github.com/ecoletree1001/pjt-resolve 접속
+2. 우측 상단 ⋮ → **데스크톱 사이트** 체크 (모바일 화면에서는 일부 버튼이 숨겨집니다)
+3. 원하는 작업 수행
+   - **파일 올리기**: `Add file` → `Upload files` → 안드로이드 파일 선택기에서 고르기 → 하단에 커밋 메시지 입력 → `Commit changes`
+   - **파일 수정**: 파일 열기 → 연필(✏️) 아이콘 → 수정 → `Commit changes`
+   - **새 파일**: `Add file` → `Create new file`
+   - **Pages 배포**: `Settings` → `Pages` (8번 참고)
+
+이 방법은 `git` 명령어가 전혀 필요 없고, 커밋·푸시가 한 번에 처리됩니다.
+
+### 방법 2. GitHub 모바일 앱
+
+1. Play Store에서 **GitHub** 앱 설치 후 로그인
+2. 저장소 → **Browse code** → 파일 선택
+3. 우측 상단 드롭다운 → **Edit** → 수정
+4. 커밋 화면에서 **기본 브랜치 대신 새 브랜치를 선택**할 수 있고, 이어서 PR 생성까지 가능
+
+간단한 오타 수정, PR 리뷰·머지, 실패한 CI 재실행에 적합합니다.
+단, 저장소를 로컬에 clone 하거나 여러 파일을 한꺼번에 다루는 작업은 할 수 없습니다.
+
+### 방법 3. Termux — 명령어를 그대로 쓰고 싶다면
+
+**설치처 주의:** Play Store 버전은 업데이트가 중단된 구버전입니다. 반드시 **F-Droid** 또는 **GitHub Releases** 에서 받으세요.
+
+- F-Droid: https://f-droid.org/packages/com.termux/
+- GitHub: https://github.com/termux/termux-app/releases
+
+설치 후 Termux에서:
+
+```bash
+# 1) 패키지 최신화 및 git 설치
+pkg update && pkg upgrade
+pkg install git openssh
+
+# 2) 내부 저장소 접근 권한 (다운로드 폴더 등을 쓰려면)
+termux-setup-storage
+
+# 3) 사용자 정보 설정
+git config --global user.name "본인 GitHub 아이디"
+git config --global user.email "jiminyee@ecoletree.com"
+
+# 4) 저장소 받아오기 — 여기서부터는 이 문서의 명령어가 그대로 동작합니다
+git clone https://github.com/ecoletree1001/pjt-resolve.git
+cd pjt-resolve
+```
+
+인증은 3번의 **Personal Access Token** 방식이 편합니다.
+토큰을 매번 입력하지 않으려면:
+
+```bash
+git config --global credential.helper store
+```
+
+> `credential.helper store` 는 토큰을 평문 파일(`~/.git-credentials`)로 저장합니다.
+> 공용 기기에서는 사용하지 마세요.
+
+파일 편집은 Termux 안에서 `nano 파일명` 으로 하거나, **Acode** 같은 안드로이드 코드 에디터로
+`termux-setup-storage` 로 연결한 폴더를 열어 편집한 뒤 Termux에서 커밋하면 됩니다.
+
+### 방법 4. Codespaces / github.dev — 브라우저 속 VS Code
+
+- 저장소 페이지에서 `Code` → `Codespaces` → `Create codespace on main`
+- 또는 저장소 주소의 `github.com` 을 **`github.dev`** 로 바꿔 접속하면 가벼운 편집기가 열립니다
+
+개인 무료 계정은 월 **120 core-hours** 가 포함됩니다 (2코어 머신 기준 약 60시간).
+
+> **안드로이드 주의:** Codespaces는 전용 모바일 앱이 없고 브라우저 VS Code는 터치에 최적화돼 있지 않습니다.
+> 특히 안드로이드 가상 키보드에서 **명령 팔레트의 Enter/Esc 가 동작하지 않는 문제**가 보고돼 있어,
+> 블루투스 키보드 없이 장시간 작업하기에는 불편합니다.
+
+### 안드로이드에서의 권장 순서
+
+1. 우선 **Chrome + 데스크톱 사이트** 로 시도 → 대부분의 작업(업로드·수정·PR·Pages)이 해결됩니다
+2. 자주 쓰는 수정·리뷰는 **GitHub 앱**
+3. `git clone`·브랜치 등 명령어가 필요해지면 **Termux**
+4. 코드를 길게 작성해야 하면 **블루투스 키보드 + Codespaces**
+
+---
+
+## 11. 명령어 요약
 
 | 목적 | 명령어 |
 | --- | --- |
