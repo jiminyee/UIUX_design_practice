@@ -63,5 +63,6 @@ UIUX_practice/
 
 ## 🔗 GitHub 연결 안내
 
-원격 저장소 연결, 인증(토큰/SSH), 커밋·푸시 흐름, GitHub Pages 배포 방법은
+`https://github.com/ecoletree1001/pjt-resolve.git` 저장소 기준의 원격 연결, 인증(토큰/SSH),
+커밋·푸시 흐름, GitHub Pages 배포 방법은
 [docs/github-connection-guide.md](docs/github-connection-guide.md) 에 정리되어 있습니다.
