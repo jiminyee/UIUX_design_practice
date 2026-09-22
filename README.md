@@ -58,3 +58,10 @@ UIUX_practice/
 └── users.html                   # 사용자 관리 페이지
 └── user-detail.html             # 사용자 상세 페이지
 ```
+
+---
+
+## 🔗 GitHub 연결 안내
+
+원격 저장소 연결, 인증(토큰/SSH), 커밋·푸시 흐름, GitHub Pages 배포 방법은
+[docs/github-connection-guide.md](docs/github-connection-guide.md) 에 정리되어 있습니다.
